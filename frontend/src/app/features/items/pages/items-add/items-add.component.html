@@ -1,1 +1,41 @@
-<p>items-add works!</p>
+<div class="form-container">
+  <header class="form-header">
+    <h1>Nouvel item</h1>
+  </header>
+
+  <form [formGroup]="itemForm" (ngSubmit)="onSubmit()" class="form">
+    <div class="form-field">
+      <label for="name">Nom</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        placeholder="Configuration SSR..."
+      />
+      @if (itemForm.get('name')?.invalid && itemForm.get('name')?.touched) {
+      <span class="error-message">Le nom est requis</span>
+      }
+    </div>
+
+    <div class="form-field">
+      <label for="status">Statut</label>
+      <select id="status" formControlName="status">
+        <option value="en cours">En cours</option>
+        <option value="validé">Validé</option>
+        <option value="refusé">Refusé</option>
+      </select>
+    </div>
+
+    <div class="form-actions">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="itemForm.invalid"
+      >
+        Ajouter</button
+      ><button type="button" class="btn btn-secondary" (click)="onCancel()">
+        Annuler
+      </button>
+    </div>
+  </form>
+</div>

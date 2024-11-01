@@ -2,11 +2,12 @@ import { Component, inject } from "@angular/core";
 import { Item } from "../../models/item.model";
 import { Router } from "@angular/router";
 import { CommonModule } from "@angular/common";
+import { ItemCardComponent } from "../../components/item-card/item-card.component";
 
 @Component({
   selector: "app-items-list",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ItemCardComponent],
   templateUrl: "./items-list.component.html",
   styleUrl: "./items-list.component.scss",
 })
@@ -26,10 +27,6 @@ export class ItemsListComponent {
     {
       name: "Implémentation Lazy Loading Routes",
       status: "en cours",
-    },
-    {
-      name: "Tests Unitaires Services",
-      status: "refusé",
     },
     {
       name: "Configuration Server-Side Rendering",

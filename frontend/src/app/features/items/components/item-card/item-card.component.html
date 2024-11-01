@@ -1,1 +1,8 @@
-<p>item-card works!</p>
+<div class="item">
+  <div class="item-info">
+    <span class="item-name">{{ item.name }}</span>
+    <span class="item-status" [class]="getStatusClass(item.status)">
+      {{ item.status }}
+    </span>
+  </div>
+</div>

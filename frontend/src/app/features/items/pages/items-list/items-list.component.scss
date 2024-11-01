@@ -1,28 +1,3 @@
-.item-status {
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-
-  &.status-en.cours {
-    // CSS matches 'status-en cours'
-    background-color: rgba(245, 158, 11, 0.2);
-    color: var(--pending-color);
-  }
-
-  &.status-validé {
-    // CSS matches 'status-validé'
-    background-color: rgba(16, 185, 129, 0.2);
-    color: var(--success-color);
-  }
-
-  &.status-refusé {
-    // CSS matches 'status-refusé'
-    background-color: rgba(239, 68, 68, 0.2);
-    color: var(--error-color);
-  }
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -45,33 +20,23 @@
   border: 1px solid var(--border-color);
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--border-color);
-  transition: background-color 0.2s ease;
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--text-secondary);
+  background-color: var(--card-background);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
 
-  &:last-child {
-    border-bottom: none;
+  .empty-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
   }
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-
-  .item-info {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .item-name {
-    font-weight: 500;
-    font-size: 0.875rem;
+  .empty-text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -83,16 +48,6 @@
 
     h1 {
       font-size: 1.25rem;
-    }
-  }
-
-  .item {
-    padding: 0.625rem 0.875rem;
-
-    .item-info {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
     }
   }
 }
