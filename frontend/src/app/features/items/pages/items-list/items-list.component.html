@@ -1,0 +1,30 @@
+<header class="header">
+  <h1>En Voiture Simone</h1>
+  <button class="btn btn-primary" (click)="navigateToAdd()">
+    <span class="icon">+</span>
+    Nouveau item
+  </button>
+</header>
+
+@if (items.length) {
+<main class="items-container">
+  @for (item of items; track item.name) {
+  <div class="item">
+    <div class="item-info">
+      <span class="item-name">{{ item.name }}</span>
+      <span class="item-status" [class]="'status-' + item.status">
+        {{ item.status }}
+      </span>
+    </div>
+  </div>
+  }
+</main>
+} @else {
+<div class="empty-state">
+  <div class="empty-icon">📋</div>
+  <div class="empty-text">Aucun item trouvé</div>
+  <button class="btn btn-primary" (click)="navigateToAdd()">
+    Ajouter un item
+  </button>
+</div>
+}
