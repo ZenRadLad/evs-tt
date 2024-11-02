@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, inject } from "@angular/core";
-import { Observable } from "rxjs";
+import { delay, Observable } from "rxjs";
 import { Item } from "./item.model";
 import { environment } from "../../../../environments/environment";
 
@@ -12,7 +12,12 @@ export class ItemsService {
   readonly itemsApiUrl = `${environment.API_URL}/items`;
 
   getItems(): Observable<Item[]> {
-    return this.http.get<Item[]>(`${this.itemsApiUrl}`);
+    return this.http
+      .get<Item[]>(this.itemsApiUrl)
+      .pipe
+      // test loading data UI
+      // delay(5000) // 5 second delay
+      ();
   }
 
   addItem(item: Item): Observable<Item> {

@@ -5,11 +5,8 @@
     (click)="navigateToAdd()"
     [disabled]="store.loading()"
   >
-    @if (store.loading()) {
-    <span class="loading-dots"></span>
-    } @else {
     <span class="icon">+</span>
-    Nouvel item }
+    Nouvel item
   </button>
 </header>
 
@@ -20,9 +17,13 @@
   </div>
   <button class="alert-close" (click)="store.resetError()">×</button>
 </div>
-} @if (store.items().length) {
+} @if (store.loading() && !store.entities().length) {
+<div class="loading-container">
+  <span class="loading-dots"></span>
+</div>
+} @else if (store.entities().length) {
 <main class="items-container" [class.loading]="store.loading()">
-  @for (item of store.items(); track item.name) {
+  @for (item of store.entities(); track item.id) {
   <app-item-card [item]="item" />
   }
 </main>

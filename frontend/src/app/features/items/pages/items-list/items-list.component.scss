@@ -69,10 +69,17 @@
   }
 }
 
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
 .loading-dots {
   display: inline-flex;
   align-items: center;
-  height: 1.5rem;
+  height: 3.5rem;
 
   &::after {
     content: "";
@@ -95,8 +102,6 @@
 }
 
 .items-container {
-  transition: opacity 0.2s;
-
   &.loading {
     opacity: 0.7;
     pointer-events: none;
