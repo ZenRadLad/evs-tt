@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import {
   FormControl,
@@ -16,7 +16,6 @@ import { ItemsStore, Item } from "../../data";
   providers: [ItemsStore],
   templateUrl: "./items-add.component.html",
   styleUrl: "./items-add.component.scss",
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ItemsAddComponent {
   readonly router = inject(Router);

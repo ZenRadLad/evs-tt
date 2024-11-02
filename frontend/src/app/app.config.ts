@@ -1,7 +1,7 @@
 import {
   ApplicationConfig,
   isDevMode,
-  provideZoneChangeDetection,
+  provideExperimentalZonelessChangeDetection,
 } from "@angular/core";
 import { provideRouter } from "@angular/router";
 import { provideAnimations } from "@angular/platform-browser/animations";
@@ -11,7 +11,7 @@ import { provideStoreDevtools } from "@ngrx/store-devtools";
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideExperimentalZonelessChangeDetection(),
     provideRouter(routes),
     provideAnimations(),
     provideHttpClient(),

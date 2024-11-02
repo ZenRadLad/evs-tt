@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { Router } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { ItemCardComponent } from "../../ui/item-card/item-card.component";
@@ -11,7 +11,6 @@ import { ItemsStore } from "../../data";
   providers: [ItemsStore],
   templateUrl: "./items-list.component.html",
   styleUrl: "./items-list.component.scss",
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ItemsListComponent {
   readonly router = inject(Router);

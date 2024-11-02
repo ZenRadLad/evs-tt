@@ -7,7 +7,6 @@ import { Item, ItemStatus } from "../../data";
   imports: [],
   templateUrl: "./item-card.component.html",
   styleUrl: "./item-card.component.scss",
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ItemCardComponent {
   @Input({ required: true }) item!: Item;
