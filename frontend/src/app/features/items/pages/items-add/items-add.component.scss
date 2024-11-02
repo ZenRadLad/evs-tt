@@ -77,6 +77,14 @@
 }
 
 .btn {
+  &:disabled {
+    color: #666;
+    border-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.8;
+    background-color: transparent;
+  }
+
   &-secondary {
     background-color: transparent;
     color: var(--text-primary);
