@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
-import { Item, ItemStatus } from "../../data/item.model";
+import { Item, ItemStatus } from "../../data";
 
 @Component({
   selector: "app-item-card",

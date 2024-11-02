@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { Router } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { ItemCardComponent } from "../../ui/item-card/item-card.component";
-import { ItemsStore } from "../../data/store/item-store.component";
+import { ItemsStore } from "../../data";
 
 @Component({
   selector: "app-items-list",

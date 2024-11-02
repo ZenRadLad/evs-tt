@@ -7,8 +7,8 @@ import {
   Validators,
 } from "@angular/forms";
 import { Router } from "@angular/router";
-import { ItemsStore } from "../../data/store/item-store.component";
-import { Item } from "../../data/item.model";
+import { ItemsStore, Item } from "../../data";
+
 @Component({
   selector: "app-items-add",
   standalone: true,
