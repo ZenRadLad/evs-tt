@@ -13,7 +13,10 @@ app.get('/api/items', (req, res) => {
 });
 
 app.post('/api/items', (req, res) => {
-  const newItem = req.body;
+  const newItem = {
+    ...req.body,
+    id: items.length + 1 // Ensure unique ID
+  };
   items.push(newItem);
   res.status(201).json(newItem);
 });
