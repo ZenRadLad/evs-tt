@@ -40,6 +40,69 @@
   }
 }
 
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid var(--error-color);
+  border-radius: 0.5rem;
+  color: var(--error-color);
+  font-size: 0.875rem;
+}
+
+.alert-close {
+  background: none;
+  border: none;
+  color: var(--error-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.loading-dots {
+  display: inline-flex;
+  align-items: center;
+  height: 1.5rem;
+
+  &::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: currentColor;
+    border-radius: 50%;
+    animation: loading 0.8s infinite;
+  }
+}
+
+@keyframes loading {
+  0%,
+  100% {
+    box-shadow: -8px 0 0 -4px, 8px 0 0 -4px;
+  }
+  50% {
+    box-shadow: -8px 0 0 0, 8px 0 0 0;
+  }
+}
+
+.items-container {
+  transition: opacity 0.2s;
+
+  &.loading {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+}
+
 @media (max-width: 640px) {
   .header {
     flex-direction: column;

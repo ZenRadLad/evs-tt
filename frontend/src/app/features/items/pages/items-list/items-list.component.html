@@ -1,14 +1,28 @@
 <header class="header">
   <h1>Liste des items</h1>
-  <button class="btn btn-primary" (click)="navigateToAdd()">
+  <button
+    class="btn btn-primary"
+    (click)="navigateToAdd()"
+    [disabled]="store.loading()"
+  >
+    @if (store.loading()) {
+    <span class="loading-dots"></span>
+    } @else {
     <span class="icon">+</span>
-    Nouvel item
+    Nouvel item }
   </button>
 </header>
 
-@if (items.length) {
-<main class="items-container">
-  @for (item of items; track item.name) {
+@if (store.error()) {
+<div class="alert">
+  <div class="alert-content">
+    {{ store.error() }}
+  </div>
+  <button class="alert-close" (click)="store.resetError()">×</button>
+</div>
+} @if (store.items().length) {
+<main class="items-container" [class.loading]="store.loading()">
+  @for (item of store.items(); track item.name) {
   <app-item-card [item]="item" />
   }
 </main>

@@ -1,5 +1,5 @@
-import { Component, Input } from "@angular/core";
-import { Item, ItemStatus } from "../../models/item.model";
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
+import { Item, ItemStatus } from "../../data/item.model";
 
 @Component({
   selector: "app-item-card",
@@ -7,6 +7,7 @@ import { Item, ItemStatus } from "../../models/item.model";
   imports: [],
   templateUrl: "./item-card.component.html",
   styleUrl: "./item-card.component.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ItemCardComponent {
   @Input({ required: true }) item!: Item;

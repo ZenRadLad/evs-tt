@@ -1,50 +1,21 @@
-import { Component, inject } from "@angular/core";
-import { Item } from "../../models/item.model";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { Router } from "@angular/router";
 import { CommonModule } from "@angular/common";
-import { ItemCardComponent } from "../../components/item-card/item-card.component";
+import { ItemCardComponent } from "../../ui/item-card/item-card.component";
+import { ItemsStore } from "../../data/store/item-store.component";
 
 @Component({
   selector: "app-items-list",
   standalone: true,
   imports: [CommonModule, ItemCardComponent],
+  providers: [ItemsStore],
   templateUrl: "./items-list.component.html",
   styleUrl: "./items-list.component.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ItemsListComponent {
   readonly router = inject(Router);
-
-  // Temporary data - will come from store later
-  items: Item[] = [
-    {
-      name: "Configuration Signal Store NGRX",
-      status: "en cours",
-    },
-    {
-      name: "Mise en place Standalone Components",
-      status: "validé",
-    },
-    {
-      name: "Implémentation Lazy Loading Routes",
-      status: "en cours",
-    },
-    {
-      name: "Configuration Server-Side Rendering",
-      status: "en cours",
-    },
-    {
-      name: "Optimisation Change Detection",
-      status: "validé",
-    },
-    {
-      name: "Intégration Reactive Forms",
-      status: "en cours",
-    },
-    {
-      name: "Configuration ESLint & Prettier",
-      status: "validé",
-    },
-  ];
+  readonly store = inject(ItemsStore);
 
   navigateToAdd(): void {
     this.router.navigate(["/items/new"]);

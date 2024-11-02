@@ -6,40 +6,7 @@ const cors = require('cors');
 app.use(bodyParser.json());
 app.use(cors());
 
-let items = [
-  {
-    name: "Configuration Signal Store NGRX",
-    status: "en cours"
-  },
-  {
-    name: "Mise en place Standalone Components",
-    status: "validé"
-  },
-  {
-    name: "Implémentation Lazy Loading Routes",
-    status: "en cours"
-  },
-  {
-    name: "Tests Unitaires Services",
-    status: "refusé"
-  },
-  {
-    name: "Configuration Server-Side Rendering",
-    status: "en cours"
-  },
-  {
-    name: "Optimisation Change Detection",
-    status: "validé"
-  },
-  {
-    name: "Intégration Reactive Forms",
-    status: "en cours"
-  },
-  {
-    name: "Configuration ESLint & Prettier",
-    status: "validé"
-  }
-];
+let items = [];
 
 app.get('/api/items', (req, res) => {
   res.json(items);
