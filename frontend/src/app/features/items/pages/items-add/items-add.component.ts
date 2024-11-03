@@ -29,7 +29,6 @@ export class ItemsAddComponent {
   onSubmit(): void {
     if (this.itemForm.valid) {
       this.store.addItem(this.itemForm.value as Item);
-      this.router.navigate(["/items"]);
     }
   }
 
