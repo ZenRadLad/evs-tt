@@ -3,7 +3,16 @@ services:
     build: ./backend
     ports:
       - "3000:3000"
+    networks:
+      - evs-tt-network
+
   frontend:
     build: ./frontend
     ports:
       - "80:80"
+    networks:
+      - evs-tt-network
+
+networks:
+  evs-tt-network:
+    driver: bridge
